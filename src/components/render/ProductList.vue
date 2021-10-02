@@ -52,6 +52,7 @@ export default {
           this.getsp = this.items[i];
         }
       }
+      console.log(this.items)
     },
     callvuex() {
       this.$store.commit("addToCart", this.getsp);
@@ -63,10 +64,11 @@ export default {
     },
   },
   created() {
-    fetch("http://localhost:3000/items/")
+    fetch("http://localhost:3000/items")
       .then((res) => res.json())
       .then((data) => (this.items = data));
   },
+
 };
 </script>
 

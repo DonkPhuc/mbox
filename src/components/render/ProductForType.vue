@@ -116,7 +116,7 @@ export default {
     },
   },
   created() {
-    fetch("http://localhost:3000/items/")
+   fetch("http://localhost:3000/items")
       .then((res) => res.json())
       .then((data) => (this.items = data));
   },
@@ -197,6 +197,6 @@ h2 {
   background: #fffffff6;
   color: #000;
   border-top: 3px solid #000;
-  padding:25px 40px;
+  padding: 25px 40px;
 }
 </style>
