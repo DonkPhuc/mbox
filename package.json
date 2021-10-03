@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "json": "json-server ./data/mbox.json",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -12,7 +11,6 @@
     "bootstrap": "^5.1.1",
     "bootstrap-vue-3": "0.0.3",
     "core-js": "^3.6.5",
-    "json-server": "^0.16.3",
     "vue": "^3.2.12",
     "vue-router": "^4.0.11",
     "vuex": "^4.0.2"

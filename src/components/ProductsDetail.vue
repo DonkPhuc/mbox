@@ -37,7 +37,7 @@
               <div class="my-5 text-center pt-5">
                 <h1 class="name mt-5">ĐÁNH GIÁ</h1>
                 <p>Chưa có đánh giá nào.</p>
-                <h4>HÃY LÀ NGƯỜI ĐẦU TIÊN NHẬN XÉT “{{items.name}}”</h4>
+                <h4>HÃY LÀ NGƯỜI ĐẦU TIÊN NHẬN XÉT “{{ items.name }}”</h4>
                 <p>
                   Email của bạn sẽ không được hiển thị công khai. Các trường bắt
                   buộc được đánh dấu *
@@ -78,7 +78,10 @@ export default {
     };
   },
   created() {
-    fetch("http://localhost:3000/items/" + this.$route.params.id)
+    fetch(
+      "https://my-json-server.typicode.com/DonkPhuc/mbox-api/items/" +
+        this.$route.params.id
+    )
       .then((res) => res.json())
       .then((data) => (this.items = data));
   },

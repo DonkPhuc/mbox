@@ -64,7 +64,7 @@ export default {
     },
   },
   created() {
-    fetch("http://localhost:3000/items")
+    fetch("https://my-json-server.typicode.com/DonkPhuc/mbox-api/items")
       .then((res) => res.json())
       .then((data) => (this.items = data));
   },
