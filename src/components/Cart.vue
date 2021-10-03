@@ -55,7 +55,6 @@
               <p class="mb-0 price">{{ formatPrice(i.price) }} VND</p>
             </div>
             <div class="col-2">
-              <!-- <button @click="xoasp(i.id)" class="float-end">x</button> -->
               <button
                 type="button"
                 class="btn-close float-end"
@@ -73,7 +72,7 @@
         <h1 class="pt-3 pb-5">{{ formatPrice(tinhtien()) }} VND</h1>
       </div>
       <h1 class="py-5">THÔNG TIN KHÁCH HÀNG</h1>
-      <form @submit="onSubmit()"  class="row">
+      <form @submit="onSubmit()" class="row">
         <div class="col-12">
           <input
             class="effect-8"
@@ -93,7 +92,7 @@
         <div class="col-6 py-3">
           <input
             class="effect-8"
-            type="number"
+            type="text"
             v-model="phonenumber"
             placeholder="Số Điện Thoại"
           />
@@ -145,7 +144,7 @@ Sacombank chi nhánh HCM"
           >
         </div>
         <div class="text-center pt-4 mt-5">
-          <button class="btn-1" @click="checkForm" >ĐẶT HÀNG</button>
+          <button class="btn-1" @click="checkForm">ĐẶT HÀNG</button>
         </div>
       </form>
     </div>
@@ -155,7 +154,6 @@ Sacombank chi nhánh HCM"
 export default {
   data() {
     return {
-      tongtien: 0,
       name: null,
       phonenumber: null,
       email: null,
@@ -188,16 +186,6 @@ export default {
         }
       }
     },
-    tinhtien() {
-      this.tongtien = 0;
-      for (var i = 0; i < this.$store.state.cart.length; i++) {
-        this.$store.state.cart[i].total =
-          this.$store.state.cart[i].price * this.$store.state.cart[i].quantity;
-        this.tongtien += this.$store.state.cart[i].total;
-      }
-      this.$store.state.tongtienincart = this.tongtien;
-      return this.tongtien;
-    },
     xoasp(value) {
       for (var i = 0; i < this.$store.state.cart.length; i++) {
         if (this.$store.state.cart[i].id == value) {
@@ -208,12 +196,22 @@ export default {
     checkForm(e) {
       var validRegex =
         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-      if (this.name && this.phonenumber && this.address && this.email && this.dkhoan)
+      if (
+        this.name &&
+        this.phonenumber &&
+        this.address &&
+        this.email &&
+        this.dkhoan
+      )
         return true;
       this.errors = [];
-      if (!this.name || this.name.length < 2)
+      if (!this.name || this.name.length < 2 || isNaN(this.name) == false)
         this.errors.push("Vui Lòng Điền Tên Ít Nhất 2 Từ");
-      if (!this.phonenumber || this.phonenumber.length < 10)
+      if (
+        !this.phonenumber ||
+        this.phonenumber.length < 10 ||
+        isNaN(this.phonenumber) == true
+      )
         this.errors.push("Vui Lòng Điền Số Điện Thoại Có 10 Chữ Số");
       if (!this.address || this.address.length < 10)
         this.errors.push("Vui Lòng Điền Địa Chỉ");
@@ -222,15 +220,23 @@ export default {
       if (!this.dkhoan || this.dkhoan != true)
         this.errors.push("Vui Lòng Đọc Điều Khoản!");
       e.preventDefault();
-      this.$store.state.invoice.push(this.name, this.address);
-    },
-    formatPrice(value) {
-      // toFIxed(so duoi)
-      let val = (value / 1).toFixed(0);
-      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
     onSubmit() {
       this.$router.push("/cart/order-received");
+    },
+    formatPrice(value) {
+      let val = (value / 1).toFixed(0);
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
+    tinhtien() {
+      this.tongtien = 0;
+      for (var i = 0; i < this.$store.state.cart.length; i++) {
+        this.$store.state.cart[i].total =
+          this.$store.state.cart[i].price * this.$store.state.cart[i].quantity;
+        this.tongtien += this.$store.state.cart[i].total;
+      }
+      this.$store.state.tongtienincart = this.tongtien;
+      return this.tongtien;
     },
   },
 };

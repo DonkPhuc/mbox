@@ -2,6 +2,7 @@ import {
     createStore
 } from "vuex"
 
+
 const store = createStore({
     state: {
         cart: [],
@@ -23,25 +24,20 @@ const store = createStore({
             }
             if (exist == false) {
                 state.cart.push({
-                    ...item,
-                    // tongsp:state.tongsp++
+                    ...item
                 })
             } else {
                 for (let i = 0; i < its.length; i++) {
-                    // its[i].quantity++
-                    // state.tongsp++
                     if (its[i].id == item.id) {
                         its[i].quantity++
                     }
                 }
-
             }
         },
         xoaCart() {
             var its = this.state.cart
             its.splice(this.id);
         },
-       
     },
 })
 

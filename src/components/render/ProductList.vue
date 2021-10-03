@@ -52,7 +52,6 @@ export default {
           this.getsp = this.items[i];
         }
       }
-      console.log(this.items)
     },
     callvuex() {
       this.$store.commit("addToCart", this.getsp);
