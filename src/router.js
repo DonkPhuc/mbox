@@ -12,6 +12,7 @@ import Cart from "./components/Cart.vue";
 import error from "./components/error.vue";
 import PDetail from "./components/ProductsDetail.vue";
 import Invoice from "./components/Invoice.vue"
+import Search from "./components/render/ProductForSearch.vue"
 
 export const routes = [{
         path: '/',
@@ -47,6 +48,10 @@ export const routes = [{
     }, {
         path: '/product/:id',
         component: PDetail,
+        props: true
+    }, {
+        path: '/search',
+        component: Search,
         props: true
     }
 ];

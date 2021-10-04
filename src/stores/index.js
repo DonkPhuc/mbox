@@ -7,7 +7,8 @@ const store = createStore({
     state: {
         cart: [],
         invoice: [],
-        tongtienincart: 0
+        tongtienincart: 0,
+        search_string: null
     },
     mutations: {
         addToCart(state, item) {

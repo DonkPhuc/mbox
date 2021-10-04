@@ -1,60 +1,68 @@
 <template>
   <div
-    id="myCarousel"
-    class="carousel slide bg-inverse"
+    id="carouselExampleIndicators"
+    class="carousel slide"
     data-bs-ride="carousel"
   >
-    <ol class="carousel-indicators">
-      <li
+    <div class="carousel-indicators">
+      <button
         style="width: 15px; height: 15px"
-        data-bs-target="#myCarousel"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
         data-bs-slide-to="0"
-        class="active"
-      ></li>
-      <li
+        class="active carousel-indicators-btn"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
         style="width: 15px; height: 15px"
-        data-bs-target="#myCarousel"
+        class="carousel-indicators-btn"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
         data-bs-slide-to="1"
-      ></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
+        aria-label="Slide 2"
+      ></button>
+    </div>
+    <div class="carousel-inner">
       <div class="carousel-item active">
         <img
-          class="d-block w-100"
           src="http://mabellebox.vn/wp-content/uploads/2020/03/banner4.png"
-          alt="First slide"
+          class="d-block w-100"
+          alt="..."
         />
       </div>
       <div class="carousel-item">
         <img
-          class="d-block w-100"
           src="http://mabellebox.vn/wp-content/uploads/2020/03/banner3.jpg"
-          alt="Second slide"
+          class="d-block w-100"
+          alt="..."
         />
       </div>
     </div>
-    <a
+    <button
       class="carousel-control-prev"
-      href="#myCarousel"
-      role="button"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
       data-bs-slide="prev"
     >
-      <span
-        class="carousel-control-prev-icon carousel-control"
-        aria-hidden="true"
-      ></span>
-    </a>
-    <a
+      <img
+        class="control-icon control-icon-prev"
+        src="https://cdn-icons-png.flaticon.com/512/318/318477.png"
+        alt=""
+      />
+    </button>
+    <button
       class="carousel-control-next"
-      href="#myCarousel"
-      role="button"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
       data-bs-slide="next"
     >
-      <span
-        class="carousel-control-next-icon carousel-control"
-        aria-hidden="true"
-      ></span>
-    </a>
+      <img
+        class="control-icon control-icon-next"
+        src="https://cdn-icons-png.flaticon.com/512/318/318476.png"
+        alt=""
+      />
+    </button>
   </div>
   <!-- Main -->
   <main class="container-fluid" id="app">
@@ -183,8 +191,8 @@ export default {
   opacity: 0;
   transition: 0.4s ease;
   background-image: url(https://mabellebox.vn/wp-content/uploads/2017/06/poison-apple-433x516.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+  background-size: contain;
+  background-repeat: no-repeat;
   transition: all 0.5s ease-in-out;
   /* background: rgb(255, 255, 255); */
 }
@@ -311,17 +319,22 @@ export default {
   }
 }
 /*  */
-.carousel-control {
-  background: #000;
-  border-radius: 10%;
+.control-icon {
+  height: 30px;
+  width: 30px;
 }
-.carousel-control-next-icon {
-  margin-left: 150px;
+.control-icon-next{
+  margin-right: -100px;
 }
-.carousel-control-prev-icon {
-  margin-right: 150px;
+.control-icon-prev{
+  margin-left: -100px;
 }
-.carousel-indicators li {
+@media screen and (max-width: 860px) {
+  .control-icon {
+    display: none;
+  }
+}
+.carousel-indicators-btn {
   border-radius: 100%;
   border: 1px solid white;
 }

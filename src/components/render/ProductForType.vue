@@ -1,5 +1,5 @@
 <template>
-  <div class="container px-lg-5 pt-5">
+  <div class="container px-5 pt-5">
     <div class="px-lg-5">
       <div class="row">
         <!--  -->
@@ -116,7 +116,7 @@ export default {
     },
   },
   created() {
-   fetch("https://my-json-server.typicode.com/DonkPhuc/mbox-api/items")
+    fetch("https://my-json-server.typicode.com/DonkPhuc/mbox-api/items")
       .then((res) => res.json())
       .then((data) => (this.items = data));
   },
@@ -141,11 +141,6 @@ export default {
 .nav {
   display: inline-block;
 }
-@import url("https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap");
-body {
-  background: #cddc39;
-  font-family: "Arimo", sans-serif;
-}
 h2 {
   color: #000;
   text-align: center;
@@ -158,7 +153,7 @@ h2 {
 }
 .tab {
   cursor: pointer;
-  padding: 20px 40px;
+  padding: 10px 20px;
   margin: 0px 2px;
   background: #000;
   display: inline-block;
@@ -167,6 +162,7 @@ h2 {
   box-shadow: 0 0.2rem 0.5rem #524e4e80;
   margin-top: 50px;
   text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 .panel {
   display: none;
@@ -197,6 +193,6 @@ h2 {
   background: #fffffff6;
   color: #000;
   border-top: 3px solid #000;
-  padding: 25px 40px;
+  padding: 12px 22px;
 }
 </style>

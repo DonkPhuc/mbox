@@ -1,6 +1,6 @@
 <template>
   <nav
-    :class="{ 'scrolled-nav': scrolledNav }"
+    :class="{ scrolledNav: scrolledNav }"
     class="px-lg-5 navbar navbar-expand-md navbar-light fixed-top"
   >
     <div class="container px-lg-5">
@@ -29,15 +29,37 @@
             <p>CHÍNH SÁCH</p>
           </router-link>
         </ul>
-        <ul class="navbar-nav ms-auto">
-          <router-link class="nav-link" to="/cart">
-            <img
-              class="cart"
-              src="https://img.icons8.com/material-two-tone/24/000000/fast-cart.png"
+        <div class="navbar-nav ms-auto">
+          <!--  -->
+          <div class="nav-link searchbar">
+            <input
+              class="form-label"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              v-model="search"
             />
-            <span class="badge text-dark">{{ itemCount }}</span>
+            <button class="btn-outline" @click="searchitem()">
+              <img
+                class="s-img"
+                src="https://cdn-icons-png.flaticon.com/512/118/118177.png"
+                alt=""
+              />
+            </button>
+          </div>
+          <!--  -->
+          <router-link class="nav-link mt-2" to="/cart">
+            <div class="position-relative">
+              <img
+                class="cart"
+                src="https://img.icons8.com/material-two-tone/24/000000/fast-cart.png"
+              />
+              <span class="translate-middle badge rounded-pill bg-danger">
+                {{ itemCount }}
+              </span>
+            </div>
           </router-link>
-        </ul>
+        </div>
       </div>
     </div>
   </nav>
@@ -48,6 +70,7 @@ export default {
   data() {
     return {
       scrolledNav: null,
+      search: null,
     };
   },
   computed: {
@@ -63,12 +86,24 @@ export default {
   },
   methods: {
     updateScroll() {
-      const scrollPos = window.scrollY;
-      if (scrollPos > 100) {
+      if (window.scrollY > 100) {
         this.scrolledNav = true;
         return;
       }
       this.scrolledNav = false;
+    },
+    // openSearchFunc() {
+    //   this.openSearch = true;
+    // },
+    searchitem() {
+      fetch(
+        "https://my-json-server.typicode.com/DonkPhuc/mbox-api/items?q=" +
+          this.search
+      )
+        .then((res) => res.json())
+        .then((data) => (this.$store.state.search_string = data));
+
+      this.$router.push("/search");
     },
   },
   mounted() {
@@ -89,7 +124,6 @@ export default {
 }
 nav {
   height: auto;
-  /* background: rgba(255, 255, 255, 0); */
   border-bottom: solid 2px rgba(255, 255, 255, 0.548);
 }
 nav:hover {
@@ -103,7 +137,6 @@ nav img {
 }
 .cart {
   height: 40px;
-  margin-right: -15px;
 }
 /* nav */
 .nav-link {
@@ -137,9 +170,29 @@ nav img {
   left: 0;
 }
 /*  */
-.scrolled-nav {
+.scrolledNav {
   background: rgb(255, 255, 255);
   transition: 0.5s ease all;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+/*  */
+.s-img {
+  height: 40px;
+  width: 40px;
+}
+/*  */
+.form-label {
+  background: rgba(255, 255, 255, 0);
+  margin-right: -12px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.searchbar{
+  margin: 7px -20px;
+}
+.btn-outline{
+  background: rgba(255, 255, 255, 0);
+  border: none;
 }
 </style>
