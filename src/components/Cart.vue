@@ -106,7 +106,7 @@
           />
         </div>
         <!-- erorrs -->
-        <div class="mt-5 errors pt-3" v-if="errors.length">
+        <div class="mt-5 errors pt-3" v-if="errors.length" ref="errors">
           <ul>
             <li v-for="error in errors" :key="error">
               <i>{{ error }}</i>
@@ -201,7 +201,8 @@ export default {
         this.phonenumber &&
         this.address &&
         this.email &&
-        this.dkhoan
+        this.dkhoan &&
+        this.$store.state.cart.length >= 1
       )
         return true;
       this.errors = [];
@@ -219,10 +220,14 @@ export default {
         this.errors.push("Vui Lòng Điền Email Chính Xác");
       if (!this.dkhoan || this.dkhoan != true)
         this.errors.push("Vui Lòng Đọc Điều Khoản!");
+      if (!this.$store.state.cart || this.$store.state.cart.length < 1)
+        this.errors.push("Giỏ Hàng Trống!");
       e.preventDefault();
+      window.scrollTo(200, 200);
     },
     onSubmit() {
       this.$router.push("/cart/order-received");
+      window.scrollTo(0, 0);
     },
     formatPrice(value) {
       let val = (value / 1).toFixed(0);

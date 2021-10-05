@@ -74,7 +74,7 @@
     <Render />
     <!--  -->
     <div class="text-center my-5">
-      <router-link to="/products">
+      <router-link to="/products" @click="scrollToTop">
         <button class="see-more mb-5">Xem Thêm</button>
       </router-link>
     </div>
@@ -153,13 +153,11 @@ export default {
   components: {
     Render,
   },
-  // Fetch data json server
-  // mounted() {
-  //   fetch("http://localhost:3000/items")
-  //     .then((res) => res.json())
-  //     .then((data) => (this.items = data))
-  //     .catch((err) => console.log(err.message));
-  // },
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
+  },
 };
 </script>
 
@@ -323,10 +321,10 @@ export default {
   height: 30px;
   width: 30px;
 }
-.control-icon-next{
+.control-icon-next {
   margin-right: -100px;
 }
-.control-icon-prev{
+.control-icon-prev {
   margin-left: -100px;
 }
 @media screen and (max-width: 860px) {

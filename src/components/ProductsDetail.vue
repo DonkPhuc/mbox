@@ -17,7 +17,7 @@
           </div>
           <div class="row">
             <div class="col-12 col-lg-6 text-center">
-              <router-link to="/cart" @click="addToCart()"
+              <router-link to="/cart" @click="addToCart(), scrollToTop()"
                 ><button class="mt-4 btn-1">MUA NGAY</button></router-link
               >
             </div>
@@ -93,6 +93,9 @@ export default {
       // toFIxed(so duoi)
       let val = (value / 1).toFixed(0);
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
+    scrollToTop() {
+      window.scrollTo(0, 0);
     },
   },
 };

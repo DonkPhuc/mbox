@@ -58,7 +58,7 @@
     <Render />
     <!--  -->
     <div class="text-center my-5">
-      <router-link to="/products">
+      <router-link to="/products" @click="scrollToTop">
         <button class="see-more mb-5">Xem Thêm</button>
       </router-link>
     </div>
@@ -71,6 +71,11 @@ export default {
   components: {
     Render,
   },
+  methods:{
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
+  }
 };
 </script>
 <style scoped>

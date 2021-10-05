@@ -10,15 +10,10 @@
         >
           <div class="text-center" style="height: 100%">
             <div class="sp_home">
-              <!-- <router-link :to="`/product/${item.id}`">
-                <img :src="item.img" class="img-fluid" alt="" />
-              </router-link> -->
-
               <img :src="item.img" class="img-fluid" alt="" />
-              <router-link :to="`/product/${item.id}`">
+              <router-link :to="`/product/${item.id}`" @click="scrollToTop()">
                 <div class="overlay"></div>
               </router-link>
-              <!-- <div class="overlay"></div> -->
               <div class="ver_mas text-center">
                 <p class="go-arrow" @click="addToCart(item.id), callvuex()">
                   Thêm vào giỏ
@@ -26,7 +21,6 @@
               </div>
             </div>
             <div class="card-body">
-              <!-- <router-link :to="`/product/${item.id}`"> </router-link> -->
               <p class="namesp">{{ item.name }}</p>
               <h5 class="price">{{ formatPrice(item.price) }} VND</h5>
             </div>
@@ -61,13 +55,15 @@ export default {
       let val = (value / 1).toFixed(0);
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
   },
   created() {
     fetch("https://my-json-server.typicode.com/DonkPhuc/mbox-api/items")
       .then((res) => res.json())
       .then((data) => (this.items = data));
   },
-
 };
 </script>
 

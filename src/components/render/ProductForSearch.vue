@@ -5,7 +5,7 @@
         <div class="text-center" style="height: 100%">
           <div class="sp_home">
             <img :src="item.img" class="img-fluid" alt="" />
-            <router-link :to="`/product/${item.id}`">
+            <router-link :to="`/product/${item.id}`" @click="scrollToTop()">
               <div class="overlay"></div>
             </router-link>
             <div class="ver_mas text-center">
@@ -30,7 +30,7 @@
 export default {
   data() {
     return {
-        getsp:[]
+      getsp: [],
     };
   },
   computed: {
@@ -53,6 +53,9 @@ export default {
       // toFIxed(so duoi)
       let val = (value / 1).toFixed(0);
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
+    scrollToTop() {
+      window.scrollTo(0, 0);
     },
   },
 };

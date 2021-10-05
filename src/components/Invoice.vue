@@ -97,7 +97,7 @@
   </div>
   <div class="container py-5">
     <div class="text-center">
-      <router-link to="/products">
+      <router-link to="/products" @click="scrollToTop">
         <button class="see-more invoice-btn" @click="$store.commit('xoaCart')">
           Trở lại cửa hàng
         </button>
@@ -125,13 +125,15 @@ export default {
       let val = (value / 1).toFixed(0);
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
+    scrollToTop(){
+      window.scrollTo(0, 0);
+    }
   },
 };
 </script>
 <style scoped>
 .invoice {
   background: #fff;
-  padding: 20px;
 }
 
 .invoice-company {
@@ -139,7 +141,7 @@ export default {
 }
 
 .invoice-header {
-  margin: 0 -20px;
+  margin: 0 ;
   background: #f0f3f4;
   padding: 20px;
 }
@@ -150,12 +152,6 @@ export default {
   display: table-cell;
   width: 1%;
 }
-
-.invoice-from,
-.invoice-to {
-  padding-right: 20px;
-}
-
 .invoice-date .date,
 .invoice-from strong,
 .invoice-to strong {

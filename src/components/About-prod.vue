@@ -226,7 +226,7 @@
             POISON APPLE <br />
             SẮC ĐỎ NÂU QUYẾN RŨ
           </p>
-          <router-link to="/product/7">
+          <router-link to="/product/7" @click="scrollToTop">
             <button class="see-more-prod buy mb-5">Xem Ngay</button>
           </router-link>
         </div>
@@ -240,7 +240,7 @@
             <br />
             SẮC ĐỎ NÂU QUYẾN RŨ
           </p>
-          <router-link to="/product/8">
+          <router-link to="/product/8" @click="scrollToTop">
             <button class="see-more-prod buy mb-5">Xem Ngay</button>
           </router-link>
         </div>
@@ -252,7 +252,7 @@
             DANCE PARTY <br />
             SẮC HỒNG QUYẾN RŨ
           </p>
-          <router-link to="/product/9">
+          <router-link to="/product/9" @click="scrollToTop">
             <button class="see-more-prod buy mb-5">Xem Ngay</button>
           </router-link>
         </div>
@@ -261,6 +261,15 @@
   </main>
 </template>
 
+<script>
+export default {
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
+  },
+};
+</script>
 <style scoped>
 main h1,
 main h2 {

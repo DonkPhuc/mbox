@@ -4,7 +4,7 @@
     class="px-lg-5 navbar navbar-expand-md navbar-light fixed-top"
   >
     <div class="container px-lg-5">
-      <router-link class="navbar-brand abs" to="/">
+      <router-link class="navbar-brand abs" to="/" @click="scrollToTop()">
         <img src="./logo.png" alt="" />
       </router-link>
       <button
@@ -18,14 +18,24 @@
 
       <div class="navbar-collapse collapse" id="collapseNavbar">
         <ul class="navbar-nav">
-          <router-link class="nav-link" to="/about-us">
+          <router-link class="nav-link" to="/about-us" @click="scrollToTop()">
             <p>VỀ MBOX</p>
           </router-link>
-          <router-link class="nav-link" to="/about-products">
+          <router-link
+            class="nav-link"
+            to="/about-products"
+            @click="scrollToTop()"
+          >
             <p>SẢN PHẨM</p>
           </router-link>
-          <router-link class="nav-link" to="/products"><p>SHOP</p></router-link>
-          <router-link class="nav-link" to="/chinh-sach-bao-mat">
+          <router-link class="nav-link" to="/products" @click="scrollToTop()"
+            ><p>SHOP</p></router-link
+          >
+          <router-link
+            class="nav-link"
+            to="/chinh-sach-bao-mat"
+            @click="scrollToTop()"
+          >
             <p>CHÍNH SÁCH</p>
           </router-link>
         </ul>
@@ -48,7 +58,7 @@
             </button>
           </div>
           <!--  -->
-          <router-link class="nav-link mt-2" to="/cart">
+          <router-link class="nav-link mt-2" to="/cart" @click="scrollToTop()">
             <div class="position-relative">
               <img
                 class="cart"
@@ -92,9 +102,9 @@ export default {
       }
       this.scrolledNav = false;
     },
-    // openSearchFunc() {
-    //   this.openSearch = true;
-    // },
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
     searchitem() {
       fetch(
         "https://my-json-server.typicode.com/DonkPhuc/mbox-api/items?q=" +
@@ -104,6 +114,7 @@ export default {
         .then((data) => (this.$store.state.search_string = data));
 
       this.$router.push("/search");
+      window.scrollTo(0, 0);
     },
   },
   mounted() {
@@ -188,10 +199,10 @@ nav img {
   border: none;
   border-bottom: 1px solid black;
 }
-.searchbar{
-  margin: 7px -20px;
+.searchbar {
+  margin: 7px;
 }
-.btn-outline{
+.btn-outline {
   background: rgba(255, 255, 255, 0);
   border: none;
 }
