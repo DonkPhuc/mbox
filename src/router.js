@@ -13,6 +13,8 @@ import error from "./components/error.vue";
 import PDetail from "./components/ProductsDetail.vue";
 import Invoice from "./components/Invoice.vue"
 import Search from "./components/render/ProductForSearch.vue"
+import Login from "./components/Login"
+import Register from "./components/Register"
 
 export const routes = [{
         path: '/',
@@ -44,7 +46,7 @@ export const routes = [{
     }, {
         path: '/cart/order-received',
         component: Invoice,
-        name:Invoice
+        name: Invoice
     }, {
         path: '/product/:id',
         component: PDetail,
@@ -53,6 +55,12 @@ export const routes = [{
         path: '/search',
         component: Search,
         props: true
+    }, {
+        path: '/user/login',
+        component: Login,
+    }, {
+        path: '/user/register',
+        component: Register,
     }
 ];
 

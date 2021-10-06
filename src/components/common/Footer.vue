@@ -61,6 +61,7 @@ footer {
 .input-home {
   background: rgba(0, 0, 0, 0);
   border-radius: 0;
+  margin-right: 2px;
 }
 
 .btn-input-home {
@@ -73,7 +74,9 @@ footer {
   color: pink;
   size: 9px;
 }
-
+.input-home:focus{
+  background: rgba(0, 0, 0, 0);
+}
 .see-more {
   border-radius: 0;
   background: #630000;

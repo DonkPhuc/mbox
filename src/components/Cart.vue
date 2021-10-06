@@ -223,7 +223,7 @@ export default {
       if (!this.$store.state.cart || this.$store.state.cart.length < 1)
         this.errors.push("Giỏ Hàng Trống!");
       e.preventDefault();
-      window.scrollTo(200, 200);
+      window.scrollTo(0,300);
     },
     onSubmit() {
       this.$router.push("/cart/order-received");

@@ -3,7 +3,7 @@
     :class="{ scrolledNav: scrolledNav }"
     class="px-lg-5 navbar navbar-expand-md navbar-light fixed-top"
   >
-    <div class="container px-lg-5">
+    <div class="container-lg px-lg-5">
       <router-link class="navbar-brand abs" to="/" @click="scrollToTop()">
         <img src="./logo.png" alt="" />
       </router-link>
@@ -57,6 +57,13 @@
               />
             </button>
           </div>
+          <!--  -->
+          <router-link class="nav-link mt-2" to="/user/login" @click="scrollToTop()">
+            <img
+              class="cart"
+              src="https://img.icons8.com/material-sharp/452/user.png"
+            />
+          </router-link>
           <!--  -->
           <router-link class="nav-link mt-2" to="/cart" @click="scrollToTop()">
             <div class="position-relative">
@@ -195,15 +202,23 @@ nav img {
 /*  */
 .form-label {
   background: rgba(255, 255, 255, 0);
-  margin-right: -12px;
+  margin-right: -10px;
   border: none;
   border-bottom: 1px solid black;
+  width: 120px;
+  padding-left: 10px;
 }
 .searchbar {
   margin: 7px;
 }
 .btn-outline {
-  background: rgba(255, 255, 255, 0);
+  background: rgba(0, 0, 0, 0);
   border: none;
+  padding: 0;
+}
+@media screen and (min-width: 780px) {
+  .cart {
+    margin-left: -13px;
+  }
 }
 </style>
