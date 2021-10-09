@@ -13,8 +13,9 @@ import error from "./components/error.vue";
 import PDetail from "./components/ProductsDetail.vue";
 import Invoice from "./components/Invoice.vue"
 import Search from "./components/render/ProductForSearch.vue"
-import Login from "./components/Login"
-import Register from "./components/Register"
+import Login from "./components/auth/Login"
+import Register from "./components/auth/Register"
+import User from "./components/auth/User.vue"
 
 export const routes = [{
         path: '/',
@@ -61,6 +62,9 @@ export const routes = [{
     }, {
         path: '/user/register',
         component: Register,
+    }, {
+        path: '/user',
+        component: User,
     }
 ];
 

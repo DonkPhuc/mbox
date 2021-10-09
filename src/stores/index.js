@@ -8,7 +8,8 @@ const store = createStore({
         cart: [],
         invoice: [],
         tongtienincart: 0,
-        search_string: null
+        search_string: null,
+        // login: false
     },
     mutations: {
         addToCart(state, item) {
@@ -39,6 +40,9 @@ const store = createStore({
             var its = this.state.cart
             its.splice(this.id);
         },
+        // setLogin(state, status) {
+        //     state.login = status
+        // }
     },
 })
 

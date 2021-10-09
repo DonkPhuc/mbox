@@ -187,11 +187,11 @@ export default {
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: 0.4s ease;
-  background-image: url(https://mabellebox.vn/wp-content/uploads/2017/06/poison-apple-433x516.png);
-  background-size: contain;
+  transition: 0.3s ease;
+  background-image: url(https://lipstick.vn/wp-content/uploads/2016/12/vet-Son-Giogio-Armani-405.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   /* background: rgb(255, 255, 255); */
 }
 
@@ -221,7 +221,7 @@ export default {
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 
 .ver_mas p {
