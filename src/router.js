@@ -17,6 +17,22 @@ import Login from "./components/auth/Login"
 import Register from "./components/auth/Register"
 import User from "./components/auth/User.vue"
 
+import './configs/firebase'
+import {
+    getAuth
+} from 'firebase/auth'
+
+const requireAuth = (to, from, next) => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    if (!user) next({
+        name: 'Login',
+        params: {}
+    })
+    next()
+}
+
 export const routes = [{
         path: '/',
         component: Home,
@@ -59,12 +75,16 @@ export const routes = [{
     }, {
         path: '/user/login',
         component: Login,
+        name: "Login"
     }, {
         path: '/user/register',
         component: Register,
     }, {
         path: '/user',
         component: User,
+        beforeEnter: (to, from, next) => {
+            requireAuth(to, from, next)
+        }
     }
 ];
 

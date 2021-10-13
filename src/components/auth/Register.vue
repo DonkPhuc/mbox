@@ -32,6 +32,19 @@
               />
 
               <button class="see-more">ĐĂNG KÝ</button>
+
+              <button
+                v-show="this.successfull == true"
+                class="see-more"
+                type="button"
+              >
+                <span
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                Loading...
+              </button>
               <p class="pt-5 fst-italic error">
                 {{ error }}
               </p>
@@ -51,6 +64,12 @@ import { ref } from "vue";
 import { useRegister } from "../../configs/useRegister";
 
 export default {
+  data() {
+    return {
+      successfull: false,
+    };
+  },
+
   setup() {
     const { error, signup } = useRegister();
     const email = ref("");
@@ -58,6 +77,10 @@ export default {
     const comfirmPassword = ref("");
 
     async function onSubmit() {
+      if (error.length < 1) {
+        this.successfull = true;
+        console.log('ok')
+      }
       if (password.value == comfirmPassword.value) {
         await signup(email.value, password.value);
       } else {

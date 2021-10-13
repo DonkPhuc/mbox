@@ -1,6 +1,6 @@
 <template>
   <div class="container p-5 mt-5">
-    <div class="row mt-5 px-lg-5">
+    <div class="row my-5 px-lg-5">
       <div class="col-lg-3 col-12">
         <ul class="list-group list-group-flush mt-5 pt-5">
           <li class="list-group-item">
@@ -16,7 +16,7 @@
       </div>
       <!--  -->
       <div class="col-lg-9 col-12 text-lg-start text-center">
-        <p class="mt-5 p-5">
+        <p class="my-5 p-5">
           Hello <b class="text-uppercase">{{ name }}</b> (not
           <span class="text-uppercase">{{ name }}</span> ?
           <a @click="logout"><b class="signout">Sign out</b></a> )
@@ -35,11 +35,13 @@
 import { ref, onBeforeMount } from "vue";
 import "../../configs/firebase";
 import { getAuth, signOut } from "firebase/auth";
+import { useRouter } from "vue-router";
 
 export default {
   setup() {
     const name = ref("");
     const auth = getAuth();
+    const router = useRouter();
 
     onBeforeMount(() => {
       const user = auth.currentUser;
@@ -50,7 +52,7 @@ export default {
 
     const logout = () =>
       signOut(auth).then(() => {
-        console.log("dang xuat");
+        router.push({ path: "/user/login" });
       });
 
     return {

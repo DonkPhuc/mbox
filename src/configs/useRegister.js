@@ -20,12 +20,14 @@ async function signup(email, password) {
             password,
         );
         return response
-
     } catch (err) {
         if (err) {
             error.value = err.code;
-        } else {
-            error.value = "Successful"
+        }
+
+    } finally {
+        if (error.value == null) {
+            error.value = "successful"
         }
     }
 }

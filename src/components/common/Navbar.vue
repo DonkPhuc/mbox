@@ -58,13 +58,15 @@
             </button>
           </div>
           <!--  -->
-          <!-- <router-link class="nav-link mt-2" to="/user/login"> </router-link> -->
-          <a class="nav-link mt-2" href="/user/login" @click="scrollToTop()">
+          <router-link class="nav-link mt-2" to="/user">
             <img
               class="cart"
               src="https://img.icons8.com/material-sharp/452/user.png"
             />
-          </a>
+          </router-link>
+          <!-- <a class="nav-link mt-2" href="/user/login" @click="scrollToTop()">
+            
+          </a> -->
           <!--  -->
           <router-link class="nav-link mt-2" to="/cart" @click="scrollToTop()">
             <div class="position-relative">
