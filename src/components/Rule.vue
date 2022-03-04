@@ -49,17 +49,17 @@
 
           <p class="font-weight-bolder">Thông tin chuyển khoản:</p>
           <p class="font-weight-bolder">
-            Chủ tài khoản: Công Ty TNHH Mỹ Phẩm MBB
+            Chủ tài khoản: DO NGOC KIM PHUC
           </p>
-          <p class="font-weight-bolder">Số tài khoản: 060210533535</p>
-          <p class="font-weight-bolder">Ngân hàng: Sacombank chi nhánh HCM</p>
+          <p class="font-weight-bolder">Số tài khoản: 78888001661986</p>
+          <p class="font-weight-bolder">Ngân hàng: BIDV</p>
           <p class="font-weight-bolder">
             Nội dung chuyển khoản: Họ và Tên + Số điện thoại
           </p>
           <p>
             (* Nếu quý khách chuyển khoản thông qua ATM, vui lòng chụp lại biên
-            lai và gửi inbox về Fanpage Ma Belle Box:
-            https://www.facebook.com/MaBelleBox/)
+            lai và gửi inbox về Fanpage MBox:
+            https://www.facebook.com/dnkphuc/)
           </p>
         </li>
 
@@ -81,7 +81,7 @@
           <p class="mb-4">
             Nếu sau thời gian đó quý khách vẫn chưa nhận được hàng, xin vui lòng
             liên hệ lại với Ma Belle Box qua inbox về Fanpage Ma Belle Box:
-            https://www.facebook.com/MaBelleBox
+            https://www.facebook.com/dnkphuc
           </p>
         </li>
         <li class="ul-title">
@@ -133,7 +133,7 @@
           <p class="mt-4">
             Trong thời hạn 48 giờ kể từ lúc nhận sản phẩm, nếu sản phẩm có bất
             kì lỗi nào phát sinh từ phía sản xuất, quý khách phản hồi trực tiếp
-            về inbox Fanpage Ma Belle Box: https://www.facebook.com/MaBelleBox
+            về inbox Fanpage Ma Belle Box: https://www.facebook.com/dnkphuc
           </p>
         </li>
         <li class="ul-title">
