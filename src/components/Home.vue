@@ -28,7 +28,7 @@
         <img
           src="http://mabellebox.vn/wp-content/uploads/2020/03/banner4.png"
           class="d-block w-100"
-          alt="..1"
+          alt="..."
         />
       </div>
       <div class="carousel-item">
