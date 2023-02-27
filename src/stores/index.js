@@ -9,7 +9,6 @@ const store = createStore({
         invoice: [],
         tongtienincart: 0,
         search_string: null,
-        // login: false
     },
     mutations: {
         addToCart(state, item) {
