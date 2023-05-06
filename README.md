@@ -22,3 +22,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+###Deloy
+https://mbox-shop.netlify.app/
