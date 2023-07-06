@@ -1,9 +1,11 @@
 # mbox
 
-###Deloy
+### Deploy
+```
 https://mbox-shop.netlify.app/
+```
 
-## Project setup
+### Project setup
 ```
 npm install
 ```
@@ -26,7 +28,7 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-###Technologies Used
+### Technologies Used
 Vue 3
 Vue 3 is a popular framework used to build dynamic web applications.
 
