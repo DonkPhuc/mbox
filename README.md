@@ -29,20 +29,11 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Technologies Used
-Vue 3
-Vue 3 is a popular framework used to build dynamic web applications.
+Vue 2
+Vue 2 is a popular framework used to build dynamic web applications.
 
-Vite
-Vite is a fast build tool for Vue 3 applications.
+Javacript
+Javacript is an open-source programming language extension of Javascript, providing static typing and other features to the code.
 
-Typescript
-Typescript is an open-source programming language extension of Javascript, providing static typing and other features to the code.
-
-MongoDB
-MongoDB is a non-relational database management system used for modern web applications.
-
-Mongoose
-Mongoose is a middleware library that helps connect applications to MongoDB.
-
-ExpressJS
-ExpressJS is a popular framework used to build server-side web applications.
+Bootstrap
+Bootstrap is a popular CSS framework used for designing web interfaces. It provides CSS classes and Javascript libraries to reduce development time and optimize user experience.
